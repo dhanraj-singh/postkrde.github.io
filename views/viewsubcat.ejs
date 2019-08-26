@@ -1,0 +1,48 @@
+<% include header %>
+<% include slider %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+    	<center>
+    		<h2>Sub Category List</h2>
+		<style>
+		#catmaindiv
+		{
+			height:auto;
+			width:800px;
+		}
+		.catsubdiv
+		{
+			height:150px;
+			width:200px;
+			float:left;
+		}	
+		</style>
+		<div id="catmaindiv">
+		<% for(let i=0;i<subcatlist.length;i++) { %>
+			<a href="/viewpost?scnm=<%= subcatlist[i].subcatnm %>">
+			<div class="catsubdiv">
+			<img src="../uploads/<%= subcatlist[i].subcaticonnm %>" height="100" width="150" />
+			<br/><br/>
+			<b style="color:white;font-size:15px;"><%= subcatlist[i].subcatnm %></b>	
+			</div>
+			</a>
+		<% } %>
+		</div>	
+
+    	</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

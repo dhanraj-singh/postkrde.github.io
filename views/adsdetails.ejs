@@ -1,0 +1,83 @@
+ <% include header %>
+<% include slider %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+<center>
+
+<h1>Detailed Description For Ads</h1>
+
+
+<table height="500" width="600" border="2">
+
+<tr>
+<td>Title</td>
+<td><%= adsdetails.adstitle %></td>
+</tr>
+
+<tr>
+<td>Ads Type</td>
+<td><%= adsdetails.adssubcat %></td>
+</tr>
+
+<tr>
+<td>Description</td>
+<td><%= adsdetails.adsdescription %></td>
+</tr>
+
+
+<tr>
+<td>Price</td>
+<td>&#8377; <%= adsdetails.adsprice %></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<center>
+
+&nbsp;&nbsp;&nbsp;
+<img src="../uploads/<%= adsdetails.file1 %>" height="150" width="100"/>
+&nbsp;&nbsp;&nbsp;
+<img src="../uploads/<%= adsdetails.file2 %>" height="150" width="100"/>
+&nbsp;&nbsp;&nbsp;
+<img src="../uploads/<%= adsdetails.file3 %>" height="150" width="100"/>
+&nbsp;&nbsp;&nbsp;
+<img src="../uploads/<%= adsdetails.file4 %>" height="150" width="100"/>
+&nbsp;&nbsp;&nbsp;
+
+</center>
+</td>
+</tr>
+
+<tr>
+<td>Ads City</td>
+<td><%= adsdetails.adscity %></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<center>
+<a style='font-size:20px;' href="/buylogin?adsid=<%= adsdetails.adsid %>">Login to Buy</a> or <a style='font-size:20px;' href="/register">Register</a>
+</center>
+</td>
+</tr>
+
+</table>
+
+
+</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

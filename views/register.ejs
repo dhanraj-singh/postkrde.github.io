@@ -1,0 +1,83 @@
+<% include header %>
+<% include slider %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+<center>
+<h1>Register here!!!!</h1>
+<span style="font-size:20px;color:orange;"><%= output %></span>
+<form method="post" action="/register">
+<table border="2" cellspacing="10" cellpadding="10">
+	<tr>
+		<td>Name</td>
+		<td><input type="text" name="name"  placeholder="Enter name"/></td>
+	</tr>
+	<tr>
+		<td>EmailId (Username)</td>
+		<td><input type="email" name="email" placeholder="Enter emailid"/></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="password"  placeholder="Enter password"/></td>
+	</tr>
+	<tr>
+		<td>Address</td>
+		<td>
+		<textarea cols="30" rows="5" name="address"  placeholder="Enter address"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>City</td>
+		<td>
+		<select name="city" style="width:100%">
+		<option>Select City</option>
+		<optgroup label="Madhya Pradesh">
+			<option>Indore</option>
+			<option>Ujjain</option>
+			<option>Bhopal</option>
+		</optgroup>
+		<optgroup label="Maharastra">
+			<option>Mumbai</option>
+			<option>Pune</option>
+			<option>Nasik</option>
+		</optgroup>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Mobile</td>
+		<td><input type="text" name="mobile"  placeholder="Enter mobile number"/></td>
+	</tr>
+	<tr>
+		<td>Gender</td>
+		<td>
+<input type="radio" name="gender"  value="male"/> Male
+&nbsp;&nbsp;
+<input type="radio" name="gender"  value="female"/> Female
+		
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<center>
+		<input type="submit" name="s" value="Register"/>
+		</center>
+		</td>
+	</tr>
+</table>
+</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

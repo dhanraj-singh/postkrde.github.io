@@ -1,0 +1,96 @@
+<% include userheader %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+<center>
+<h1>Add Post Here!!!!</h1>    		
+
+<span style="font-size:20px;color:orange;"><%= output %></span>
+<form method="post" action="/users/postads" enctype="multipart/form-data">
+<table border="2" cellspacing="10" cellpadding="10">
+	<tr>
+		<td>Ads Title</td>
+		<td><input type="text" name="adstitle"  placeholder="Enter ads title"/></td>
+	</tr>
+	<tr>
+		<td>Category</td>
+		<td>
+			<select style= "width:250px;" name="adssubcat">
+				<option>Select category</option>
+				<% for(let i in sclist) { %>
+				<option><%= sclist[i].subcatnm %></option>
+				<% } %>
+				</select>
+						</td>
+	</tr>
+	<tr>
+		<td>Description</td>
+		<td>
+		<textarea cols="30" rows="5" name="adsdescription"  placeholder="Enter description"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>Price</td>
+		<td><input type="text" name="adsprice"  placeholder="Enter price"/></td>
+	</tr>
+	
+	<tr>
+		<td>Ads Photos</td>
+		<td>
+		Image 1 : <input type="file" name="file1"/>
+		<br>
+		Image 2 : <input type="file" name="file2"/>
+		<br>
+		Image 3 : <input type="file" name="file3"/>
+		<br>
+		Image 4 : <input type="file" name="file4"/>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td>Ads Location</td>
+		<td>
+		<select name="adscity" style="width:250px;">
+		<option>Select City</option>
+		<optgroup label="Madhya Pradesh">
+			<option>Indore</option>
+			<option>Ujjain</option>
+			<option>Bhopal</option>
+		</optgroup>
+		<optgroup label="Maharastra">
+			<option>Mumbai</option>
+			<option>Pune</option>
+			<option>Nasik</option>
+		</optgroup>
+		</select>
+		</td>
+	</tr>
+	<input type="hidden" name="userid"  value="<%= cunm %>" />
+	<tr>
+		<td colspan="3">
+		<center>
+		<input type="submit" name="s" value="Add Post"/>
+		</center>
+		</td>
+	</tr>
+</table>
+</form>
+</center>
+
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

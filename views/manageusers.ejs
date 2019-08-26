@@ -1,0 +1,54 @@
+<% include adminheader %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+<center>
+<h1>View & Manage Users here.....</h1>
+
+<table border="2" cellspacing="10" cellpadding="5">
+<tr>
+<th>RegID</th>
+<th>Name</th>
+<th>EmailID</th>
+<th>City</th>
+<th>Mobile</th>
+<th>Gender</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<% for(let i in result) { %>    	
+  	<tr>
+    	<td><%= result[i].regid %></td>
+    	<td><%= result[i].name %></td>		
+	<td><%= result[i].email %></td>
+	<td><%= result[i].city %></td>
+	<td><%= result[i].mobile %></td>
+	<td><%= result[i].gender %></td>
+	<% if(result[i].status==1) { %>
+		<td><a href="/admin/manageuserstatus?regid=<%= result[i].regid %>&status=block" title="Block User"><img src="../images/block.png" height='50' width='50' /></a></td>
+	<% } else { %>
+		<td><a href="/admin/manageuserstatus?regid=<%= result[i].regid %>&status=unblock" title="Un-Block User"><img src="../images/un-block.png" height='50' width='50' /></a></td>
+	<% } %>
+	
+	<td><a href="/admin/manageuserstatus?regid=<%= result[i].regid %>&status=delete" title="Delete User"><img src="../images/delet.png" height='50' width='50' /></a></td>
+	</tr>
+<% } %>    	
+
+</table>    	
+</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

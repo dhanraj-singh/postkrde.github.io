@@ -1,0 +1,49 @@
+<% include header %>
+<% include slider %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+    	<center>
+    		<h1>Welcome to PostKrde.com</h1>
+    		<h2>Category List.....</h2>
+		<style>
+		#catmaindiv
+		{
+			height:auto;
+			width:800px;
+		}
+		.catsubdiv
+		{
+			height:150px;
+			width:200px;
+			float:left;
+		}	
+		</style>
+		<div id="catmaindiv">
+		<% for(let i=0;i<catlist.length;i++) { %>
+			<a href="/viewsubcat?cnm=<%= catlist[i].catnm %>">
+			<div class="catsubdiv">
+			<img src="../uploads/<%= catlist[i].caticonnm %>" height="100" width="150" />
+			<br/><br/>
+			<b style="color:white;font-size:15px;"><%= catlist[i].catnm %></b>	
+			</div>
+			</a>
+		<% } %>
+		</div>	
+
+    	</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

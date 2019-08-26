@@ -1,0 +1,103 @@
+<% include header %>
+<% include slider %>
+<style>
+#tooplate_bottom_p1
+{
+  height:auto;
+  width:75%;
+  float:left;
+}
+#tooplate_bottom_p2
+{
+  height:auto;
+  width:25%;
+  float:right;
+}
+</style>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+<div id="tooplate_bottom_p1">
+
+<h1>View Ads for : <%= scnm %></h1>
+<% if(postlist.length>0) { %>		
+
+<p>Total Ads : <%= postlist.length %></p><br>
+
+<% for(let i in postlist ){%>
+<a href="/adsdetails?adsid=<%= postlist[i].adsid %>">
+<table style="border:3px solid #E3790C;border-radius:20px;" height="150" width="600">
+<tr>
+<td width="35%" rowspan="3">
+<center>
+<img src="../uploads/<%= postlist[i].file1 %>" height="100" width="150" />	
+</center>
+</td>
+<td><b><u>Title</u> : <%= postlist[i].adstitle %></b></td>
+</tr>
+<tr>
+<td><b><u>Description</u> : <%= postlist[i].adsdescription %></b></td>
+</tr>
+<tr>
+<td><b><u>Price</u> : &#8377; <%= postlist[i].adsprice %></b></td>
+</tr>
+</table>
+</a>
+<br><br>
+<% } %>
+
+<% } else { %>		  
+<h2>No search matched!!!</h2>
+<% } %>
+
+
+
+</div>		
+<div id="tooplate_bottom_p2">
+
+<h4>Filter Ads:</h4>
+
+<p><b>Filter By Price:</b></p>
+<form method="get">
+<input type="hidden" name="scnm" value="<%= scnm %>"/>
+<input type="text" name="sprice" placeholder="Starting price"/>
+<br><br>
+<input type="text" name="eprice" placeholder="Ending price"/>
+<br><br>
+<input type="submit"  value="Search"/>
+</form>
+
+<br><hr><br>
+
+<p><b>Filter By City:</b></p>
+<form>
+	<input type="hidden" name="scnm" value="<%= scnm %>"/>
+	<select name="city" style="width:100%">
+		<option>Select City</option>
+		<optgroup label="Madhya Pradesh">
+			<option>Indore</option>
+			<option>Ujjain</option>
+			<option>Bhopal</option>
+		</optgroup>
+		<optgroup label="Maharastra">
+			<option>Mumbai</option>
+			<option>Pune</option>
+			<option>Nasik</option>
+		</optgroup>
+		</select>
+<br><br>
+<input type="submit"  value="Search"/>
+</form>
+
+</div>		
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

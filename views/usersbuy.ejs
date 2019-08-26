@@ -1,0 +1,53 @@
+s<% include userheader %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+    	<center>
+    		<h2>Buy product</h2>
+    		<h2>User : <%= cunm %></h2>   				
+    		    <img src="../uploads/<%= pimage %>" height="200" width="200"/><br><br>
+   <h2> Name: <%= pname %></h2>
+    <h2>Price: <%= pprice %></h2>
+    <form action="<%= paypalURL %>" method="post">
+        <!-- Identify your business so that you can collect the payments. -->
+        <input type="hidden" name="business" value="<%= paypalID %>">
+        
+        <!-- Specify a Buy Now button. -->
+        <input type="hidden" name="cmd" value="_xclick">
+        
+        <!-- Specify details about the item that buyers will purchase. -->
+        <input type="hidden" name="item_name" value="<%= pname %>">
+        <input type="hidden" name="item_number" value="1">
+        <input type="hidden" name="amount" value="<%= pprice %>">
+        <input type="hidden" name="currency_code" value="USD">
+        
+        <!-- Specify URLs -->
+        <input type='hidden' name='cancel_return' value='http://localhost:3001/users/cancelbuy'>
+        <input type='hidden' name='return' value='http://localhost:3001/users/successbuy?adsid=<%= adsid %>&uid=<%= cunm %>&pprice=<%= pprice %>'>
+        
+        <!-- Display the payment button. -->
+        <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+    </form>
+    		
+    		
+    		
+    		
+    		
+    	</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

@@ -1,0 +1,45 @@
+<% include header %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+    <center>
+<h1>Login Here To Buy Selected Product Online!!!!</h1>
+<span style="font-size:20px;color:orange;"><%= output %></span>
+<form method="post" action="/buylogin">
+<table border="2" cellspacing="10" cellpadding="10">
+	<tr>
+		<td>EmailId (Username)</td>
+		<td>
+		<input type="hidden" name="adsid" value="<%= adsid %>" />
+		<input type="email" name="email" />
+		</td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="password"   /></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<center>
+		<input type="submit" name="s" value="Login"/>
+		</center>
+		</td>
+	</tr>
+</table>
+</form>
+</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+

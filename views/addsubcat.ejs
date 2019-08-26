@@ -1,0 +1,56 @@
+<% include adminheader %>
+
+    <div id="tooplate_main_bottom"></div>
+    
+    <div id="tooplate_bottom">
+     	
+
+
+    	<center>
+    		<h1>Add SubCategory Here!!!</h1>
+  <span style="font-size:20px;color:orange;"><%= output %></span>  		
+ <form method="post" enctype="multipart/form-data"  action="/admin/addsubcat">
+
+<table border="2" cellspacing="10" cellpadding="10">
+	<tr>
+		<td>Category Name</td>
+		<td>
+		<select name="catnm">
+		<option>Select category</option>
+		<% for(i in clist) { %>
+		<option><%= clist[i].catnm %></option>
+		<% } %>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Sub Category Name</td>
+		<td><input type="text" name="subcatnm" placeholder="Enter sub category name"/></td>
+	</tr>
+	<tr>
+		<td>SubCategory icon</td>
+		<td><input type="file" name="caticon" /></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<center>
+		<input type="submit" name="s" value="Add  Sub Category"/>
+		</center>
+		</td>
+	</tr>
+</table>
+</form>
+</center>
+    		
+    	</center>
+
+
+		             
+    	<div class="cleaner"></div>
+    </div>   
+
+
+<% include footer %>
+
+    
+
